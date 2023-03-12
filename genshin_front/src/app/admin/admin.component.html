@@ -1,0 +1,32 @@
+<div class="admin">
+    <h2>Administration</h2>
+    <form [formGroup]="myForm" (submit)="onSubmit()">
+        <div class="base">
+            <input type="text" placeholder="Titre" formControlName="Titre" /><br />
+            <input type="text" placeholder="Description" formControlName="Description" />
+            <input type="file" accept="image/png, image/jpeg, image/jpg" (change)="onFileSelected($event)">
+        </div>
+        <h3>Comment jouer le personnage ?</h3>
+        <div formArrayName="HowToPlay">
+            <div class="howtoplay" *ngFor="let howtoplay of HowToPlayInput.controls; let i=index" [formGroupName]="i">
+                <textarea name="" id="" cols="30" rows="10" formControlName="text"></textarea>
+            </div>
+        </div>
+        <button type="button" (click)="addHowToPlay()">Ajouter</button>
+        <h3>Artifact</h3>
+        <div formArrayName="Artifact">
+            <div class="artifact" *ngFor="let artifact of ArtifactInput.controls; let n=index" [formGroupName]="n">
+                <textarea name="" id="" cols="30" rows="10" formControlName="text"></textarea>
+            </div>
+        </div>
+        <button type="button" (click)="addArtifact()">Ajouter</button>
+        <h3>Team</h3>
+        <div formArrayName="Team">
+            <div class="team" *ngFor="let team of TeamInput.controls; let t=index" [formGroupName]="t">
+                <textarea name="" id="" cols="30" rows="10" formControlName="text"></textarea>
+            </div>
+        </div>
+        <button type="button" (click)="addTeam()">Ajouter</button><br /><br />
+        <button type="submit">Envoyer</button>
+    </form>
+</div>

@@ -1,0 +1,9 @@
+<div class="intro">
+    <div class="intro__container">
+        <p>Liste des guides de personnages</p>
+    </div>
+</div>
+<!-- I want to use app-article and put the name  inside-->
+<div class="multiple">
+    <app-article *ngFor="let article of articles" [id]="article.id" [title]="article.title" [date]="date" [author]="article.author" [image]="'http://localhost:8000/images/' + article.image"></app-article>
+</div>

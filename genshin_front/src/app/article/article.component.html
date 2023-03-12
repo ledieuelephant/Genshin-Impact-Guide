@@ -1,0 +1,11 @@
+<div class="article__thumbnail">
+    <img src={{image}} alt="thumbnail image" />
+    <div class="article__thumbnail-text">
+        <h2 class="title">{{title}}</h2>
+        <p class="author-date">{{author}} | {{date}} |</p>
+        <p class="type">Guides de personnages</p>
+        <div class="link">
+            <a [routerLink]="['/article', id]">Lire plus</a>
+        </div>
+    </div>
+</div>

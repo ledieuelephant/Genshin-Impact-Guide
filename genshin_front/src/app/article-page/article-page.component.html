@@ -1,0 +1,12 @@
+<div class="container">
+    <div *ngIf="dataLoaded">
+        <h2>{{pageData.title}}</h2>
+        <img src={{image}} width="1440px" />
+        <h3>Comment jouer ce personnage ?</h3>
+        <p *ngFor="let htp of pageData.howToPlay">{{htp.title}}</p>
+        <h3>Artéfacts :</h3>
+        <p *ngFor="let artifact of pageData.artifacts">{{artifact.title}}</p>
+        <h3>Teams : </h3>
+        <p *ngFor="let team of pageData.teams">{{team.title}}</p>
+    </div>
+</div>
